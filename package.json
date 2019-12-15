@@ -7,9 +7,9 @@
     "control",
     "sidebar",
     "leaflet-sidebar-v2"],
-  "homepage": "https://github.com/runette/ngx-leaflet-fullscreen",
+  "homepage": "https://github.com/runette/ngx-leaflet-sidebar",
   "licence": "MIT",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
