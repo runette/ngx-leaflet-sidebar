@@ -9,13 +9,13 @@
     "leaflet-sidebar-v2"],
   "homepage": "https://github.com/runette/ngx-leaflet-sidebar",
   "licence": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
-    "leaflet-sidebar-v2": "^3.2.1"
+    "leaflet-sidebar-v2": "^3.2.2"
   },
   "dependencies": {
-    "leaflet-sidebar-v2": "^3.2.1"
+    "leaflet-sidebar-v2": "^3.2.2"
   }
 }
