@@ -112,7 +112,7 @@ Always build with `"buildOptimizer": false,`.
 
 The directive emits the events created by leaflet-sidebar-v2 - 'opening', 'closing', and 'content' (see the orignal documentation for details).
 
-The eventts are emitted as:
+The events are emitted as:
 
 ```typescript
 interface SidebarEvent extends LeafletEvent {
