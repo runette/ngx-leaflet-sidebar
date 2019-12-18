@@ -10,7 +10,7 @@ for an example of this working - see [trackbash](https://trackbash.co.uk).
 
 Install using npm:
 
-```
+```sh
 npm install @runette/ngx-leaflet-sidebar
 ```
 
@@ -18,7 +18,7 @@ npm install @runette/ngx-leaflet-sidebar
 
 This library needs to be imported into the application module:
 
-```
+```typescript
 import { NgxSidebarControlModule } from '@runette/ngx-leaflet-sidebar';
 
 imports: [
@@ -29,7 +29,7 @@ imports: [
 
 Then, the control is inserted using the following directive:
 
-```
+```html
 <leaflet-sidebar-control
     [map]="..."
     [options]="..."
@@ -42,7 +42,7 @@ Where `map` is an instance of a leaflet map and `options` is an object with vali
 
 This library integrates very easily with ngx-leaflet using the onMapReady event:
 
-```
+```html
 <div id='map' class="map-container" leaflet
      [leafletOptions]="options"
      (leafletMapReady)="onMapReady($event)"
@@ -67,7 +67,7 @@ This library integrates very easily with ngx-leaflet using the onMapReady event:
 ```
 by adding the following to your map component (options are just an example):
 
-```
+```typescript
 ...
 import { Map } from 'leaflet';
 
@@ -94,7 +94,7 @@ Unfortunately - I think because the leaflet map is run outside of Angular by ngx
 
 Add the following to the angular.json 
 
-```
+```json
 "styles": [
               ...
               "./node_modules/leaflet-sidebar-v2/css/leaflet-sidebar.min.css",
@@ -106,3 +106,39 @@ Add the following to the angular.json
 For some reason yet to be found - this library does not like being built with `"buildOptimizer": true,` in the build environment - which is usually the default for the production environment in `angular.json`.
 
 Always build with `"buildOptimizer": false,`.
+
+# Events
+> New in v1.0.1
+
+The directive emits the events created by leaflet-sidebar-v2 - 'opening', 'closing', and 'content' (see the orignal documentation for details).
+
+The eventts are emitted as:
+
+```typescript
+interface SidebarEvent extends LeafletEvent {
+    id: string;
+  }
+ ```
+ 
+Typical usage would be as follows : 
+ ```html
+<leaflet-sidebar-control 
+    [map]="map"
+    [options]="sidebarOptions"
+    (change$)="onSidebarChange($event)"
+></leaflet-sidebar-control>
+```
+and
+```typescript
+onSidebarChange(e: SidebarEvent) {
+  if (e.type === 'content') {
+    let id = e.id;
+    if (id === 'routes') {
+      this.mapService.maps['way'].invalidateSize()
+    }
+    else if (id === "trains") {
+      this.mapService.maps['service'].invalidateSize()
+    }
+  } 
+}
+```
