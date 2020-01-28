@@ -1,10 +1,14 @@
 # NGX-Leaflet-Sidebar
 
-This is a wrapper for the [leaflet-sidebar-v2](https://github.com/nickpeihl/leaflet-sidebar-v2) - itself a fork of [Sidebar-V2](https://github.com/Turbo87/sidebar-v2) from Turbo87 - to make it easy to use in Angular 8+.
+This is a wrapper for the [leaflet-sidebar-v2](https://github.com/nickpeihl/leaflet-sidebar-v2) control - itself a fork of [Sidebar-V2](https://github.com/Turbo87/sidebar-v2) from Turbo87 - to make it easy to use in Angular 8+.
 
 This wrapper is tested against the [@asymmetrik/ngx-leaflet](https://github.com/Asymmetrik/ngx-leaflet) library but it has no dependency on that library so *should* work without it. It does, obviously, have a dependency that leaflet is loaded.
 
-for an example of this working - see [trackbash](https://trackbash.co.uk).
+For more detailed descriptions of how this wrapper was created : [Documentation](https://runette.gitbook.io/alcm/).
+
+For detailed descriptions of how to use and worked examples : [Article](https://medium.com/runic-software/quick-guide-to-leaflet-controls-in-angular-io-1b35d0807bdb), [Article](https://medium.com/runic-software/advanced-interactive-maps-in-angular-with-leaflet-68baafa03f72)
+
+For an example of this working in a real site - see [trackbash](https://trackbash.co.uk).
 
 # Install
 
@@ -69,12 +73,13 @@ by adding the following to your map component (options are just an example):
 
 ```typescript
 ...
-import { Map } from 'leaflet';
+/// <reference types='leaflet-sidebar-v2' />
+import { Map, SidebarOptions } from 'leaflet';
 
 
 export class OsmMapComponent implements OnInit, OnDestroy {
   public map: Map;
-  public sidebarOptions = {
+  public sidebarOptions: SidebarOptions = {
     position: 'right',
     autopan: false,
     closeButton: false,
@@ -92,13 +97,10 @@ export class OsmMapComponent implements OnInit, OnDestroy {
 
 Unfortunately - I think because the leaflet map is run outside of Angular by ngx-leaflet - the normal css encapsulation does not work and you have to load the css globally.
 
-Add the following to the angular.json 
+Add the following to the top of styles.css
 
-```json
-"styles": [
-              ...
-              "./node_modules/leaflet-sidebar-v2/css/leaflet-sidebar.min.css",
-            ],
+```css
+@import "leaflet-sidebar-v2/css/leaflet-sidebar.min.css";
 ```
 
 # Build Config
