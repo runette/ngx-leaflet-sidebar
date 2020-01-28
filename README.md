@@ -144,3 +144,16 @@ onSidebarChange(e: SidebarEvent) {
   } 
 }
 ```
+# API Access to the Control
+
+If you want access the control's methods directly from your typescript code - this can be done with `@ViewChild`
+
+Use `ViewChild` to access the component, for instance 
+
+```ts
+@ViewChild(FullscreenControlComponent,{static: false}) fullscreenComponent: FullscreenControlComponent;
+```
+
+The actual instance of the control can then be accessed directly as `this.fullscreenComponent.control`
+
+For more details and worked examples, see : [Article](https://medium.com/runic-software/advanced-interactive-maps-in-angular-with-leaflet-68baafa03f72)
