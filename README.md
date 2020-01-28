@@ -151,7 +151,7 @@ If you want access the control's methods directly from your typescript code - th
 Use `ViewChild` to access the component, for instance 
 
 ```ts
-@ViewChild(FullscreenControlComponent,{static: false}) fullscreenComponent: FullscreenControlComponent;
+@ViewChild(NgxSidebarControlComponent,{static: false}) fullscreenComponent: NgxSidebarControlComponent;
 ```
 
 The actual instance of the control can then be accessed directly as `this.fullscreenComponent.control`
