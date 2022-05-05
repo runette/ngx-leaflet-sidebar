@@ -11,8 +11,6 @@
   "licence": "MIT",
   "version": "1.0.3",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
     "leaflet-sidebar-v2": "^3.2.2"
   },
   "dependencies": {
