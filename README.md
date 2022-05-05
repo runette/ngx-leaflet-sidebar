@@ -71,8 +71,9 @@ This library integrates very easily with ngx-leaflet using the onMapReady event:
 ```
 by adding the following to your map component (options are just an example):
 
+NOTE : the script must include the `///<reference types` directive AND it must be either the first line in the script or part of a block of `///<reference types` directives that are at the top of the script.
+
 ```typescript
-...
 /// <reference types='leaflet-sidebar-v2' />
 import { Map, SidebarOptions } from 'leaflet';
 
