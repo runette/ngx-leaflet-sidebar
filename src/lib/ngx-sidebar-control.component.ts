@@ -39,7 +39,7 @@ export class NgxSidebarControlComponent implements OnInit, OnDestroy {
   @Input() set map(map: Map){
     if (map){
       this._map = map;
-      this.sidebar = control.sidebar(this.options).addTo(map);
+      this.sidebar = Control.Sidebar(this.options).addTo(map);
       this.sidebar.on(this.eventMap)
     }
   }
