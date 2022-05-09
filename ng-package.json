@@ -3,8 +3,5 @@
   "dest": "../../dist/ngx-sidebar-control",
   "lib": {
     "entryFile": "src/public-api.ts"
-  },
-  "whitelistedNonPeerDependencies": [
-    "leaflet-sidebar-v2"
-  ]
+  }
 }

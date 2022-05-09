@@ -16,7 +16,7 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/test/tsconfig.lib.json"
+              "tsConfig": "./tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"

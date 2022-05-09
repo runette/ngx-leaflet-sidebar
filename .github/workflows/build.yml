@@ -17,6 +17,7 @@ jobs:
       - name: npm install and npm run build
         run: |
           npm i @angular/cli
+          npm i @angular-devkit/build-angular
           npm i
           npm run build:prod
       - name: Push Build to Releases
