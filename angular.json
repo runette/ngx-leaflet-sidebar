@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-angular-sidebar": {
+      "projectType": "library",
+      "root": ".",
+      "sourceRoot": "./src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "./ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/test/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-angular-sidebar"
+}
