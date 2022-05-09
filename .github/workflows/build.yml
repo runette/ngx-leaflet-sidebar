@@ -19,6 +19,7 @@ jobs:
           npm i @angular/cli
           npm i @angular-devkit/build-angular
           npm i
+          npm list -all
           npm run build:prod
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
