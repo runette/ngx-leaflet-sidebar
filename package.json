@@ -12,6 +12,5 @@
   "version": "1.0.4",
   "dependencies": {
     "leaflet-sidebar-v2": "^3.2.3"
-  },
-  "scripts": {ng }
+  }
 }
