@@ -6,14 +6,17 @@
     "leaflet",
     "control",
     "sidebar",
-    "leaflet-sidebar-v2"],
+    "leaflet-sidebar-v2"
+  ],
   "homepage": "https://github.com/runette/ngx-leaflet-sidebar",
   "licence": "MIT",
   "version": "1.0.4",
   "dependencies": {
+    "@angular-devkit/build-angular": ">12.0.0",
+    "@angular/cli": "^13.3.5",
     "leaflet-sidebar-v2": "^3.2.3"
   },
   "scripts": {
-    "build:prod":"ng build --prod"
+    "build:prod": "ng build --prod"
   }
 }
