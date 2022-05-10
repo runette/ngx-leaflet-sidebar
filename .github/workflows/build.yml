@@ -16,11 +16,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and npm run build
         run: |
-          npm i --no-save @angular/cli
-          npm i --no-save ng-packagr
-          npm i --no-save @angular-devkit/build-angular
+          npm i  @angular/cli
+          npm i  ng-packagr
+          npm i  @angular-devkit/build-angular
           npm i
-          npm i --no-save @types/leaflet
+          npm i  @types/leaflet
           npm run build:prod
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
