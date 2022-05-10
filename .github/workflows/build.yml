@@ -27,3 +27,4 @@ jobs:
         with:
           artifacts: "dist/*"
           token: ${{ secrets.GITHUB_TOKEN }}
+          tag: "1.0.5"
