@@ -17,8 +17,8 @@ jobs:
       - name: npm install and npm run build
         run: |
           npm i -g --no-save @angular/cli
-          npm i --no-save ng-packagr
-          npm i --no-save @angular-devkit/build-angular
+          npm i -g --no-save ng-packagr
+          npm i -g --no-save @angular-devkit/build-angular
           npm i
           npm i --no-save @types/leaflet
           npm run build:prod
