@@ -11,10 +11,9 @@
   "homepage": "https://github.com/runette/ngx-leaflet-sidebar",
   "licence": "MIT",
   "version": "1.0.4",
-  "peerDependencies": {
-  },
   "dependencies": {
-    "leaflet-sidebar-v2":">=3.2.3"
+    "leaflet-sidebar-v2": ">=3.2.3",
+    "ng-packagr": "^13.3.1"
   },
   "scripts": {
     "build:prod": "ng build ngx-leaflet-sidebar"
