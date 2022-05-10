@@ -5,6 +5,7 @@
     "entryFile": "src/public-api.ts"
   },
   "allowedNonPeerDependencies":[
-    "leaflet-sidebar-v2"
+    "leaflet-sidebar-v2",
+    "@types/leaflet"
   ]
 }
