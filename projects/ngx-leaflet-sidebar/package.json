@@ -1,0 +1,19 @@
+{
+  "name": "@runette/ngx-leaflet-sidebar",
+  "description": "Angular Wrapper for the Leaflet Sidebar-v2 Control",
+  "keywords": [
+    "angular",
+    "leaflet",
+    "control",
+    "sidebar",
+    "leaflet-sidebar-v2"
+  ],
+  "homepage": "https://github.com/runette/ngx-leaflet-sidebar",
+  "licence": "MIT",
+  "version": "1.0.4",
+  "dependencies": {
+  },
+  "scripts": {
+    "build:prod": "ng build"
+  }
+}

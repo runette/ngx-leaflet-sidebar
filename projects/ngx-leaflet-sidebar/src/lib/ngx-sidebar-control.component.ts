@@ -16,8 +16,8 @@ export type SidebarEvent = LeafletEvent;
   template: '',
 })
 export class NgxSidebarControlComponent implements OnInit, OnDestroy {
-  private _map: Map;
-  private sidebar: Control.Sidebar;
+  private _map!: Map;
+  private sidebar!: Control.Sidebar;
   @Output() change$: EventEmitter<SidebarEvent> = new EventEmitter;
   private eventMap: SidebarEventHandlerFnMap = {
     'opening':  e => {this.change$.emit(e)},
