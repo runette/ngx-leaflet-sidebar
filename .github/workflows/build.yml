@@ -19,7 +19,7 @@ jobs:
           npm i @angular/core
           npm i @angular/cli
           npm i ng-packagr
-          npm i @angular-devkit/build-angular
+          npm i --no-save @angular-devkit/build-angular
           npm i
           npm i  @types/leaflet
           npm run build:prod
