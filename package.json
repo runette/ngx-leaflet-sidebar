@@ -14,7 +14,7 @@
   "peerDependencies": {
   },
   "dependencies": {
-    "leaflet-sidebar-v2":">3.2.3"
+    "leaflet-sidebar-v2":">=3.2.3"
   },
   "scripts": {
     "build:prod": "ng build ngx-leaflet-sidebar"
