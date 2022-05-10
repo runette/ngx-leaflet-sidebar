@@ -16,8 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and npm run build
         run: |
-          npm i --no-save @angular/core
-          npm i --no-save @angular/cli
+          npm i -g --no-save @angular/cli
           npm i --no-save ng-packagr
           npm i --no-save @angular-devkit/build-angular
           npm i
