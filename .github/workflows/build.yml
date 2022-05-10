@@ -21,7 +21,6 @@ jobs:
           npm i --save-dev ng-packagr
           npm i --save-dev @angular-devkit/build-angular
           npm i
-          npm i  @types/leaflet
           npm run build:prod
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
