@@ -1,7 +1,7 @@
 /// <reference types='leaflet-sidebar-v2' />
 import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import {Map, Control, LeafletEvent, SidebarEventHandlerFnMap} from 'leaflet';
-import '../../../../node_modules/leaflet-sidebar-v2/js/leaflet-sidebar.min.js';
+import 'node_modules/leaflet-sidebar-v2/js/leaflet-sidebar.min.js';
 
 declare module 'leaflet' {
   interface LeafletEvent{
