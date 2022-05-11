@@ -23,11 +23,13 @@ jobs:
           npm i
           npm run build:prod
           cd dist
-          ls -al
           tar -czf release.tgz ngx-leaflet-sidebar/
+          npm publish ngx-leaflet-sidebar --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/release.tgz"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "1.0.10"
+          tag: "1.0.4"
