@@ -22,9 +22,10 @@ jobs:
           npm i --save-dev @angular-devkit/build-angular
           npm i
           npm run build:prod
+          tar -czf release.tar.gz dist/
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/*"
+          artifacts: "dist/release.tar.gz"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: "1.0.5"
