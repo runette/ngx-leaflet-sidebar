@@ -24,7 +24,7 @@ jobs:
           npm run build:prod
           cd dist
           ls -al
-          tar -czf release.tgz ngx-angular-sidebar
+          tar -czf release.tgz ngx-leaflet-sidebar
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
