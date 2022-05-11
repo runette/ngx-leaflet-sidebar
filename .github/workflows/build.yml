@@ -24,7 +24,8 @@ jobs:
           npm run build:prod
           cd dist
           tar -czf release.tgz ngx-leaflet-sidebar/
-          npm publish @runette/ngx-leaflet-sidebar --access public
+          cd ngx-leaflet-sidebar
+          npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Push Build to Releases
