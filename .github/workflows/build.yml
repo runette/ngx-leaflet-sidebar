@@ -25,6 +25,7 @@ jobs:
           cd dist
           tar -czf release.tgz ngx-leaflet-sidebar/
           cd ngx-leaflet-sidebar
+          mv ../../.npmrc .
           npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
