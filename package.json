@@ -10,7 +10,7 @@
   ],
   "homepage": "https://github.com/runette/ngx-leaflet-sidebar",
   "licence": "MIT",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "dependencies": {
     "leaflet-sidebar-v2": ">=3.2.3",
     "@types/leaflet": "*"
