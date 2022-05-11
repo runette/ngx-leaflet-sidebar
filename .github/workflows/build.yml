@@ -28,6 +28,6 @@ jobs:
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release.tar.gz"
+          artifacts: "dist/release.tar.gz"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "1.0.8"
+          tag: "1.0.9"
