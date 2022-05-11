@@ -26,6 +26,7 @@ jobs:
           tar -czf release.tgz ngx-leaflet-sidebar/
           cd ngx-leaflet-sidebar
           mv ../../.npmrc .
+          mv ../../README.md .
           npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
@@ -34,4 +35,4 @@ jobs:
         with:
           artifacts: "dist/release.tgz"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "1.0.4"
+          tag: "1.0.5"
