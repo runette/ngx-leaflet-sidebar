@@ -26,7 +26,7 @@ jobs:
           tar -czf release.tgz ngx-leaflet-sidebar/
           npm publish @runette/ngx-leaflet-sidebar --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
