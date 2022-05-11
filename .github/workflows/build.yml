@@ -22,10 +22,11 @@ jobs:
           npm i --save-dev @angular-devkit/build-angular
           npm i
           npm run build:prod
-          tar -czf release.tar.gz dist/
+          cd dist
+          tar -czf release.tgz ngx-angular-sidebar
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "release.tar.gz"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "1.0.7"
+          tag: "1.0.8"
