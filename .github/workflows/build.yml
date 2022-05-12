@@ -16,6 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and npm run build
         run: |
+          mv README.md README.bac
           npm i --save-dev @angular/core
           npm i --save-dev @angular/cli
           npm i --save-dev ng-packagr
@@ -23,8 +24,8 @@ jobs:
           npm i
           npm run build:prod
           cd dist
-          mv ../../.npmrc ngx-leaflet-sidebar
-          mv ../../README.md ngx-leaflet-sidebar
+          mv ../.npmrc ngx-leaflet-sidebar
+          mv ../README.md ngx-leaflet-sidebar/README.md
           tar -czf release.tgz ngx-leaflet-sidebar/
           cd ngx-leaflet-sidebar
           npm publish --access public
