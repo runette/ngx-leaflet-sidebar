@@ -25,7 +25,7 @@ jobs:
           npm run build:prod
           cd dist
           mv ../.npmrc ngx-leaflet-sidebar
-          mv ../README.md ngx-leaflet-sidebar/README.md
+          mv ../README.bac ngx-leaflet-sidebar/README.md
           tar -czf release.tgz ngx-leaflet-sidebar/
           cd ngx-leaflet-sidebar
           npm publish --access public
