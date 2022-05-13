@@ -1,8 +1,11 @@
 on:
-  pull_request
+  pull_request:
+    types: [ closed ]
+
 name: Build Angular
 jobs:
   build:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     strategy:
       matrix:
