@@ -16,7 +16,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and npm run build
         run: |
-          mv README.md README.bac
           npm i --save-dev @angular/core
           npm i --save-dev @angular/cli
           npm i --save-dev ng-packagr
@@ -25,7 +24,6 @@ jobs:
           npm run build:prod
           cd dist
           mv ../.npmrc ngx-leaflet-sidebar
-          mv ../README.bac ngx-leaflet-sidebar/README.md
           tar -czf release.tgz ngx-leaflet-sidebar/
           cd ngx-leaflet-sidebar
           npm publish --access public
@@ -36,4 +34,4 @@ jobs:
         with:
           artifacts: "dist/release.tgz"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "1.0.6"
+          tag: "1.0.7"
