@@ -1,4 +1,5 @@
-on: push
+on:
+  pull_request
 name: Build Angular
 jobs:
   build:
@@ -22,8 +23,16 @@ jobs:
           npm i --save-dev @angular-devkit/build-angular
           npm i
           npm run build:prod
+          cd dist
+          mv ../.npmrc ngx-leaflet-sidebar
+          tar -czf release.tgz ngx-leaflet-sidebar/
+          cd ngx-leaflet-sidebar
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/angular-githubaction/*"
-          token: ${{ secrets.TOKEN }}
+          artifacts: "dist/release.tgz"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: "1.0.7"
