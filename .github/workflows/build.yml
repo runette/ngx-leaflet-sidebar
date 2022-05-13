@@ -38,4 +38,4 @@ jobs:
         with:
           artifacts: "dist/release.tgz"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "1.0.7"
+          tag: "1.0.8"
