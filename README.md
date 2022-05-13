@@ -160,3 +160,19 @@ Use `ViewChild` to access the component, for instance
 The actual instance of the control can then be accessed directly as `this.sidebarComponent.control`
 
 For more details and worked examples, see : [Article](https://medium.com/runic-software/advanced-interactive-maps-in-angular-with-leaflet-68baafa03f72)
+
+# Contributions
+
+Contributions to this repository are very welcome.
+
+Please fork the repository and create a new branch for your changes. The branch can be built locally using 
+
+```
+ng build ngx-leaflet-sidebar
+```
+
+in the root folder of the repo. This creates an npm package in a folder called `dist`. This can loaded in a test app using `npm install` and the FQ path to the dist folder.
+
+When your changes are complete create a Pull Requet against the master. It is IMPORTANT that you change the version number in `package.json` AND the tag number in `.github/workflowds/build.yaml` to the next version before the PR.
+
+When I have accepted and merged the PR, Github actions will automatically build the new package release and loaded it both as a GH release using the version as the tag name and publish the new version on npm.
