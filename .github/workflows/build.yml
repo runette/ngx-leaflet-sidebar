@@ -1,4 +1,5 @@
-on: pull
+on:
+  pull_request
 name: Build Angular
 jobs:
   build:
