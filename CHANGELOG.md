@@ -1,3 +1,7 @@
+# Version 1.0.8
+
+Fix the methd accessibility to make the `.sidebar` attribute public.
+
 # Versions 1.0.5 - 1.0.7
 
 Maintenance builds to getthe metadata correct. No change in functionality.
