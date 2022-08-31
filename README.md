@@ -157,7 +157,7 @@ Use `ViewChild` to access the component, for instance
 @ViewChild(NgxSidebarControlComponent,{static: false}) sidebarComponent: NgxSidebarControlComponent;
 ```
 
-The actual instance of the control can then be accessed directly as `this.sidebarComponent.control`
+The actual instance of the control can then be accessed directly as `this.sidebarComponent.sidebar`
 
 For more details and worked examples, see : [Article](https://medium.com/runic-software/advanced-interactive-maps-in-angular-with-leaflet-68baafa03f72)
 
