@@ -7,7 +7,7 @@ declare module 'leaflet' {
   interface LeafletEvent{
     id: string
   }
-};
+}
 
 export type SidebarEvent = LeafletEvent;
 
@@ -16,36 +16,34 @@ export type SidebarEvent = LeafletEvent;
   template: '',
 })
 export class NgxSidebarControlComponent implements OnInit, OnDestroy {
-  private _map!: Map;
-  public sidebar!: Control.Sidebar;
-  @Output() change$: EventEmitter<SidebarEvent> = new EventEmitter;
+  @Input() options!: Control.SidebarOptions;
+  @Input() map!: Map;
+
+  @Output() change$: EventEmitter<SidebarEvent> = new EventEmitter();
   public eventMap: SidebarEventHandlerFnMap = {
-    'opening':  e => {this.change$.emit(e)},
-    'closing':  e => {this.change$.emit(e)},
-    'content':  e => {this.change$.emit(e)},
-  }
+    opening: e => {
+      this.change$.emit(e);
+    },
+    closing: e => {
+      this.change$.emit(e);
+    },
+    content: e => {
+      this.change$.emit(e);
+    }
+  };
+
+  public sidebar: Control.Sidebar | undefined;
 
   constructor() {}
 
   ngOnInit() {
-  }
-
-  ngOnDestroy() {
-    this._map.removeControl(this.sidebar);
-  }
-
-  @Input() options: Control.SidebarOptions = {};
-
-  @Input() set map(map: Map){
-    if (map){
-      this._map = map;
+    if (this.map && this.options) {
       this.sidebar = new Control.Sidebar(this.options);
-      this.sidebar.addTo(map);
-      this.sidebar.on(this.eventMap)
+      this.sidebar.addTo(this.map);
+      this.sidebar.on(this.eventMap);
     }
   }
-
-  get map(): Map {
-    return this._map
+  ngOnDestroy() {
+    this.sidebar?.remove();
   }
 }
