@@ -1,15 +1,7 @@
 /// <reference types='leaflet-sidebar-v2' />
 import { Component, OnInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
-import {Map, Control, LeafletEvent, SidebarEventHandlerFnMap} from 'leaflet';
+import {Map, Control, LeafletEvent } from 'leaflet';
 import 'node_modules/leaflet-sidebar-v2/js/leaflet-sidebar.min.js';
-
-declare module 'leaflet' {
-  interface LeafletEvent{
-    id: string
-  }
-}
-
-export type SidebarEvent = LeafletEvent;
 
 @Component({
   selector: 'leaflet-sidebar-control',
@@ -19,18 +11,9 @@ export class NgxSidebarControlComponent implements OnInit, OnDestroy {
   @Input() options!: Control.SidebarOptions;
   @Input() map!: Map;
 
-  @Output() change$: EventEmitter<SidebarEvent> = new EventEmitter();
-  public eventMap: SidebarEventHandlerFnMap = {
-    opening: e => {
-      this.change$.emit(e);
-    },
-    closing: e => {
-      this.change$.emit(e);
-    },
-    content: e => {
-      this.change$.emit(e);
-    }
-  };
+  @Output() opening = new EventEmitter<LeafletEvent>();
+  @Output() closing = new EventEmitter<LeafletEvent>();
+  @Output() content = new EventEmitter<LeafletEvent & {id: string}>();
 
   public sidebar: Control.Sidebar | undefined;
 
@@ -40,7 +23,10 @@ export class NgxSidebarControlComponent implements OnInit, OnDestroy {
     if (this.map && this.options) {
       this.sidebar = new Control.Sidebar(this.options);
       this.sidebar.addTo(this.map);
-      this.sidebar.on(this.eventMap);
+
+      this.sidebar?.on("opening", e => this.opening.emit(e));
+      this.sidebar?.on("closing", e => this.closing.emit(e));
+      this.sidebar?.on("content", (e:any) => this.content.emit(e));
     }
   }
   ngOnDestroy() {
